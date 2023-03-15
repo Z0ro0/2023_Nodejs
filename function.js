@@ -12,3 +12,10 @@ console.log(result);
 sub = (n1, n2) => n1 - n2;
 result = sub(4, 2);
 console.log(result);
+
+square = (num) => {
+    return num*num;
+}
+
+result = square(3);
+console.log(result);
