@@ -9,7 +9,9 @@ const app = http.createServer(function(req, res){
     if(url==='favicon.ico')
         return res.writeHead(404);
     res.writeHead(200);
-    res.end('Hello');
+    //_dirname: 'C:\Users\xasdf\Desktop\nodejs' + url : /index.html
+    const htmlCode = fs.readFileSync(__dirname + url);
+    res.end(htmlCode);
 });
 app.listen(3333);
 //localhost:3333 접속 시 hello 뜸
