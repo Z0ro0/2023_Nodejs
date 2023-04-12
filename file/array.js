@@ -7,7 +7,7 @@ const arr = ['apple', 'banana', 'cherry', 'apple'];
 // });
 
 const cherryIndex = arr.findIndex(function(data){
-    return data === 'cherry';
+    return data === 'chrry';
 });
 
 console.log(cherryIndex);
