@@ -1,0 +1,19 @@
+{
+  "name": "3mij",
+  "version": "1.0.0",
+  "lockfileVersion": 3,
+  "requires": true,
+  "packages": {
+    "": {
+      "name": "3mij",
+      "version": "1.0.0",
+      "license": "ISC",
+      "dependencies": {
+        "ejs": "^3.1.9"
+      }
+    }
+    }
+}
+
+package.json에서
+"dependencies
