@@ -14,11 +14,8 @@ const server = http.createServer(function(req, res) {
   if(req.url == '/') {
     //renderFile(ejs대상경로, ejs에 넘겨줄 데이터, 이후에 실행될 callback)
     ejs.renderFile(path.join(__dirname, 'templeat', 'index.ejs'),
-    {name:index.name, here:index.here},
-    //
-    function(err, data){
-        res.end(data);
-    });
+    {name:index.name, here:index.here})
+    .then((data)=>res.end(data));//데이터를 넘겨받은 ejs 코드(data)를 클라이언트에 보낸다.
   }
   else if(req.url == '/food'){
     fs.createReadStream(path.join(__dirname, 'html', 'food.html')).pipe(res)
