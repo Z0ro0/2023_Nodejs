@@ -10,7 +10,15 @@ const server = http.createServer(function(req, res) {
     // 스트리밍 방식으로 index의 html 코드들을 전송 (대용량 처리에 유리)
     // 파일입출력 : 파일을 한꺼번에 처리함
     // 스트림 : 파일을 부분적으로 쪼개서 실시간으로 처리함
-    fs.createReadStream(path.join(__dirname, 'html', 'index.html')).pipe(res);
+    fs.createReadStream(path.join(__dirname, 'html', 'index.html')).pipe(res)
+    //localhost:3333으로 접속하기
+  }
+  else if(req.url == '/food'){
+    fs.createReadStream(path.join(__dirname, 'html', 'food.html')).pipe(res)
+    //localhost:3333/food으로 접속하기
+  }
+  else{
+    fs.createReadStream(path.join(__dirname, 'html', '404.html')).pipe(res)
   }
 });
 
