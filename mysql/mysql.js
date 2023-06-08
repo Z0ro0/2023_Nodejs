@@ -1,6 +1,9 @@
 const mysql = require('mysql2/promise');
-
 const path = require('path');
+
+require('dotenv').config({
+  path: path.join(__dirname, '.env')
+});
 
 require('dotenv').config({
     path: path.join(__dirname, '.env')
@@ -20,3 +23,6 @@ pool.query("SELECT * FROM player")
       console.log(r);
     }
   })
+  .catch(err => {
+    console.error(err);
+  });
