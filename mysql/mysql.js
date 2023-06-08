@@ -1,4 +1,4 @@
-const mysql = require('mysql2');
+const mysql = require('mysql2/promise');
 
 const path = require('path');
 
@@ -14,6 +14,9 @@ const pool = mysql.createPool({
     port: 1234,
 });
 
-pool.query("select * from player", (err, results) => {
-    console.log(results);
-});
+pool.query("SELECT * FROM player")
+  .then(([results]) => {
+    for(const r of results) {
+      console.log(r);
+    }
+  })
